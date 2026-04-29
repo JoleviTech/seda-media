@@ -52,20 +52,35 @@ body::before {
 /* ─────────────────────────────────────────
    NAV
 ───────────────────────────────────────── */
-nav {
+/* nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 28px 60px;
   transition: background 0.4s, padding 0.4s;
+} */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 90px;              /* ✅ FIXED HEIGHT */
+  padding: 0 60px;           /* ❗ remove vertical padding */
+  box-sizing: border-box;
 }
+
 nav.scrolled {
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   padding: 18px 60px;
   border-bottom: 1px solid var(--border);
 }
-.nav-logo img { height: 34px; }
+.nav-logo img { height: 100px; }
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
   font-family: 'Space Mono', monospace;
@@ -638,7 +653,7 @@ footer {
   font-size: 13px;
   color: rgba(255,255,255,0.28);
   line-height: 1.7;
-  margin-top: 14px;
+  margin-top: 10px;
   max-width: 260px;
 }
 .footer-col-title {
