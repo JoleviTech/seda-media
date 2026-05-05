@@ -1,18 +1,43 @@
 import { useState, useEffect, useRef } from "react";
 import sedamedia from "./assets/logos/sedamedia.png";
+import sample from "./assets/gallery/sample.jpg";
+import sample1 from "./assets/gallery/sample1.png";
+import sample2 from "./assets/gallery/sample2.jpg";
+import sample3 from "./assets/gallery/sample3.jpg";
+import sample4 from "./assets/gallery/sample4.png";
+import sample5 from "./assets/gallery/sample5.jpg";
+import sample6 from "./assets/gallery/sample6.png";
+import sample7 from "./assets/gallery/sample7.jpg";
+import sample8 from "./assets/gallery/sample8.jpg";
+import sample9 from "./assets/gallery/sample9.jpg";
+import sample10 from "./assets/gallery/sample10.jpg";
+
+import client1 from "./assets/clients/client1.png";
+import client2 from "./assets/clients/client2.png";
+import client3 from "./assets/clients/client3.png";
+import client4 from "./assets/clients/client4.png";
+import client5 from "./assets/clients/client5.png";
+import client6 from "./assets/clients/client6.png";
+import client7 from "./assets/clients/client7.png";
+import client8 from "./assets/clients/client8.png";
+import client9 from "./assets/clients/client9.png";
+import client10 from "./assets/clients/client10.png";
+import client11 from "./assets/clients/client11.png";
+import client12 from "./assets/clients/client12.jpeg";
+
 import "./landing-page.css";
 
 const galleryImages = [
-  { src: "/gallery/sample-1.jpg",  alt: "Brand campaign" },
-  { src: "/gallery/sample-2.jpg",  alt: "Content production" },
-  { src: "/gallery/sample-3.jpg",  alt: "Digital marketing" },
-  { src: "/gallery/sample-4.jpg",  alt: "Social media design" },
-  { src: "/gallery/sample-5.jpg",  alt: "Video production" },
-  { src: "/gallery/sample-6.jpg",  alt: "Strategy deck" },
-  { src: "/gallery/sample-7.jpg",  alt: "Brand identity" },
-  { src: "/gallery/sample-8.jpg",  alt: "Campaign visuals" },
-  { src: "/gallery/sample-9.jpg",  alt: "Typography design" },
-  { src: "/gallery/sample-10.jpg", alt: "Event marketing" },
+  { src: sample,  alt: "Brand campaign" },
+  { src: sample1,  alt: "Content production" },
+  { src: sample2,  alt: "Digital marketing" },
+  { src: sample3,  alt: "Social media design" },
+  { src: sample4,  alt: "Video production" },
+  { src: sample5,  alt: "Strategy deck" },
+  { src: sample6,  alt: "Brand identity" },
+  { src: sample7,  alt: "Campaign visuals" },
+  { src: sample8,  alt: "Typography design" },
+  { src: sample9, alt: "Event marketing" },
 ];
 
 function useFadeUp() {
@@ -62,7 +87,7 @@ function Nav() {
           <li key={l}><a href={h}>{l}</a></li>
         ))}
       </ul>
-      <a href="#contact" className="nav-cta">Start Project</a>
+      <a href="https://forms.gle/qVrirfaGUFu5jUDi7" target="_blank" rel="noreferrer" className="nav-cta">Start Project</a>
     </nav>
   );
 }
@@ -72,15 +97,14 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-left">
         <div className="hero-eyebrow">Creative &amp; Strategy Agency</div>
-        <h1 className="hero-headline">
-          Grow Your Brand With Strategy,<br />
-          Content, and Design That<br />
-          <span className="accent">Actually Works.</span>
-        </h1>
+       <h1 className="hero-headline">
+  Grow Your Brand With Strategy, Content, and Design That{" "}
+  <span className="accent">Actually Works.</span>
+</h1>
         <p className="hero-sub">
           We help businesses stand out, attract the right audience, and convert attention into real growth through powerful content and smart marketing.
         </p>
-        <a href="#contact" className="hero-cta">
+        <a href="https://forms.gle/qVrirfaGUFu5jUDi7" target="_blank" rel="noreferrer" className="hero-cta">
           Start Your Project Today <span>→</span>
         </a>
       </div>
@@ -91,7 +115,7 @@ function Hero() {
           import heroImg from './assets/hero-image.jpg'
           then: <img src={heroImg} alt="SEDA Media creative work" />
         */}
-        <img src="/hero-image.jpg" alt="SEDA Media creative work" />
+        <img src={sample10} alt="SEDA Media creative work" />
         <div className="hero-right-overlay" />
         <div className="hero-right-caption">
           <div className="hero-right-caption-line" />
@@ -129,7 +153,6 @@ function About() {
           <h2 className="about-title">
             Your Brand Deserves<br />More Than Just<br /><em>"Nice Designs."</em>
           </h2>
-          <p className="about-subtitle">Everything You Need to Grow — In One Place</p>
         </div>
         <div className="about-body">
           <p>SEDA Media Limited is a creative agency built on one simple idea: <strong style={{ color: "#0A0A0A" }}>Great design means nothing without results.</strong></p>
@@ -286,16 +309,36 @@ function Gallery() {
   );
 }
 
+const clients = [
+  { src: client1, alt: "Client 1" },
+  { src: client2, alt: "Client 2" },
+  { src: client3, alt: "Client 3" },
+  { src: client4, alt: "Client 4" },
+  { src: client5, alt: "Client 5" },
+  { src: client6, alt: "Client 6" },
+  { src: client7, alt: "Client 7" },
+  { src: client8, alt: "Client 8" },
+  { src: client9, alt: "Client 9" },
+  { src: client10, alt: "Client 10" },
+  { src: client11, alt: "Client 11" },
+  { src: client12, alt: "Client 12" },
+];
+
 function Clients() {
   const ref = useFadeUp();
-  const clientSlots = Array.from({ length: 12 }, (_, i) => i);
+
   return (
     <section style={{ background: "var(--white)" }}>
       <div className="section-label">Brands We Have Worked With</div>
+
       <div className="clients-grid fade-up" ref={ref}>
-        {clientSlots.map(i => (
+        {clients.map((client, i) => (
           <div className="client-cell" key={i}>
-            <div className="client-placeholder">Client<br />Logo</div>
+            <img
+              src={client.src}
+              alt={client.alt}
+              className="client-logo"
+            />
           </div>
         ))}
       </div>
@@ -344,13 +387,11 @@ function Testimonials() {
 function CTABanner() {
   return (
     <section className="cta-banner" id="contact">
-      <h2 className="cta-banner-title">
-        Your Brand Deserves<br />More Than Just<br />"Nice Designs."
-      </h2>
-      <p className="cta-banner-sub">
-        Everything you need to grow — in one place. Let's build something together.
-      </p>
-      <a href="mailto:hello@sedamedia.com" className="cta-btn">
+      <h4 className="cta-banner-title">
+       Let's build something together.
+      </h4>
+    
+      <a href="https://forms.gle/qVrirfaGUFu5jUDi7" target="_blank" rel="noreferrer" className="cta-btn">
         Start Your Project Today <span>→</span>
       </a>
     </section>
