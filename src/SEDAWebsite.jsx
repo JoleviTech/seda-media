@@ -115,7 +115,7 @@ function Hero() {
           import heroImg from './assets/hero-image.jpg'
           then: <img src={heroImg} alt="SEDA Media creative work" />
         */}
-        <img src={sample10} alt="SEDA Media creative work" />
+        <img src={sample} alt="SEDA Media creative work" />
         <div className="hero-right-overlay" />
         <div className="hero-right-caption">
           <div className="hero-right-caption-line" />
